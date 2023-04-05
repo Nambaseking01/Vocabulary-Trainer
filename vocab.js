@@ -1,8 +1,8 @@
 // Initialize Firebase
 var firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
+  apiKey: "AIzaSyBWBp147C5vJDwe3T-5L9ehXiP1n0lqLDc",
+  authDomain: "vocabulary-project-a52a8.firebaseapp.com",
+  projectId: "vocabulary-project-a52a8",
 };
 
 firebase.initializeApp(firebaseConfig);
