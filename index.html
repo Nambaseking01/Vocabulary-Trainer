@@ -1,34 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Vocabulary Practice</title>
+    <title>My Vocabulary Practice</title>
+    <!-- Add the Firebase JavaScript CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <!-- Add your Firebase initialization and the JavaScript file that includes your functions -->
+    <script>
+      var firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_AUTH_DOMAIN",
+        projectId: "YOUR_PROJECT_ID",
+      };
+      firebase.initializeApp(firebaseConfig);
+      var db = firebase.firestore();
+    </script>
+    <script src="vocab.js"></script>
   </head>
   <body>
-    <h1>Vocabulary Practice</h1>
-
-    <!-- Form to add a new word to the database -->
-    <h2>Add a New Word</h2>
+    <h1>My Vocabulary Practice</h1>
     <form>
       <label for="new-word-input">Word:</label>
-      <input type="text" id="new-word-input" required /><br />
+      <input type="text" id="new-word-input"><br><br>
       <label for="new-definition-input">Definition:</label>
-      <input type="text" id="new-definition-input" required /><br />
+      <textarea id="new-definition-input"></textarea><br><br>
       <button type="button" onclick="addWord()">Add Word</button>
+      <button type="button" onclick="getRandomWord()">Get Random Word</button>
     </form>
-
-    <!-- Button to get a random word from the database -->
-    <h2>Get a Random Word</h2>
-    <button type="button" onclick="getRandomWord()">Get Random Word</button>
     <p id="word-definition"></p>
-
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
-
-    <!-- Firebase configuration -->
-    <script src="js/script.js"></script>
   </body>
 </html>
