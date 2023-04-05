@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Vocabulary Practice</title>
-    <!-- Add the Firebase JavaScript CDN -->
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
-    <!-- Add your Firebase initialization and the JavaScript file that includes your functions -->
+<head>
+    <meta charset="UTF-8">
+    <title>Vocabulary Tester</title>
     <script>
-      var firebaseConfig = {
-        apiKey: "YOUR_API_KEY",
-        authDomain: "YOUR_AUTH_DOMAIN",
-        projectId: "YOUR_PROJECT_ID",
-      };
-      firebase.initializeApp(firebaseConfig);
-      var db = firebase.firestore();
+        // Define the vocabulary words and their definitions
+        var vocabulary = {
+            "stolid": "calm, dependable, and showing little emotion or animation",
+           
+            // more words and definitions...
+        };
+        
+        // Define a function that randomly selects a word and prompts the user for its definition
+        function testVocabulary() {
+            // Select a random word from the vocabulary
+            var words = Object.keys(vocabulary);
+            var randomWord = words[Math.floor(Math.random() * words.length)];
+            var definition = vocabulary[randomWord];
+            
+            // Prompt the user for the definition of the word
+            var userAnswer = prompt("What is the definition of '" + randomWord + "'?");
+            
+            // Check the user's answer and display feedback
+            if (userAnswer === definition) {
+                alert("Correct!");
+            } else {
+                alert("Incorrect. The definition of '" + randomWord + "' is '" + definition + "'.");
+            }
+        }
     </script>
-    <script src="vocab.js"></script>
-  </head>
-  <body>
-    <h1>My Vocabulary Practice</h1>
-    <form>
-      <label for="new-word-input">Word:</label>
-      <input type="text" id="new-word-input"><br><br>
-      <label for="new-definition-input">Definition:</label>
-      <textarea id="new-definition-input"></textarea><br><br>
-      <button type="button" onclick="addWord()">Add Word</button>
-      <button type="button" onclick="getRandomWord()">Get Random Word</button>
-    </form>
-    <p id="word-definition"></p>
-  </body>
+</head>
+<body>
+    <h1>Vocabulary Tester</h1>
+    <p>Click the button to start the test.</p>
+    <button onclick="testVocabulary()">Start Test</button>
+</body>
 </html>
