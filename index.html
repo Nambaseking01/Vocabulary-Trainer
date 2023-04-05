@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Vocabulary App</title>
+  </head>
+  <body>
+    <h1>Vocabulary App</h1>
+    <div id="word-container">
+      <p>Click the button below to get a random word:</p>
+      <button onclick="getRandomWord()">Get Word</button>
+      <p id="word-definition"></p>
+    </div>
+    <div id="add-word-container">
+      <h2>Add a New Word</h2>
+      <label for="new-word-input">Word:</label>
+      <input type="text" id="new-word-input">
+      <br>
+      <label for="new-definition-input">Definition:</label>
+      <input type="text" id="new-definition-input">
+      <br>
+      <button onclick="addWord()">Add Word</button>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
