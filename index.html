@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Vocabulary App</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vocabulary Practice</title>
   </head>
   <body>
-    <h1>Vocabulary App</h1>
-    <div id="word-container">
-      <p>Click the button below to get a random word:</p>
-      <button onclick="getRandomWord()">Get Word</button>
-      <p id="word-definition"></p>
-    </div>
-    <div id="add-word-container">
-      <h2>Add a New Word</h2>
+    <h1>Vocabulary Practice</h1>
+
+    <!-- Form to add a new word to the database -->
+    <h2>Add a New Word</h2>
+    <form>
       <label for="new-word-input">Word:</label>
-      <input type="text" id="new-word-input">
-      <br>
+      <input type="text" id="new-word-input" required /><br />
       <label for="new-definition-input">Definition:</label>
-      <input type="text" id="new-definition-input">
-      <br>
-      <button onclick="addWord()">Add Word</button>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js"></script>
-    <script src="script.js"></script>
+      <input type="text" id="new-definition-input" required /><br />
+      <button type="button" onclick="addWord()">Add Word</button>
+    </form>
+
+    <!-- Button to get a random word from the database -->
+    <h2>Get a Random Word</h2>
+    <button type="button" onclick="getRandomWord()">Get Random Word</button>
+    <p id="word-definition"></p>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+
+    <!-- Firebase configuration -->
+    <script src="js/script.js"></script>
   </body>
 </html>
